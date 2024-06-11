@@ -1,5 +1,17 @@
 
 document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.infestation-level_outer-wrapper').forEach(wrapper => {
+        wrapper.classList.add('hide-infestation-sliders');
+        wrapper.style.pointerEvents = 'none'; // Ensure pointer events are disabled initially
+    });
+
+    // Assuming checkboxes are setup similarly
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', toggleSliderVisibility);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     const zipCodeInput = document.getElementById('zip-code');
     const zipCodeButton = document.getElementById('zip-code-button');
     const zipCodeMessage = document.getElementById('zip-code-message');
